@@ -1,0 +1,16 @@
+{% extends 'bibliothecaire/base.html' %}
+{% block content %}
+    <h2 class="mt-2">Les Memebres</h2>
+    <a class="btn btn-primary my-2" href=" {% url 'member-create' %} " >ajouter</a>
+    <div class="d-flex gap-2">
+        {% for member in members %}
+            <div class="card" style="width: 20rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{member.name}}</h5>
+                    <h5 class="card-title">{{member.email}}</h5>
+                </div>
+                {% comment %} <a class="btn btn-danger my-2" href=" {% url 'member-delete' member_id=member.id %} " >supprimer</a> {% endcomment %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
