@@ -1,0 +1,38 @@
+{% extends 'bibliothecaire/base.html' %}
+{% block content %}
+    <h2 class="mt-2">Les livres</h2>
+    <div class="d-flex gap-2 ">
+        {% for book in books %}
+            <div class="card" style="width: 20rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{book.title}}</h5>
+                    <h5 class="card-title">{{book.author}}</h5>
+                    {% if book.available %}
+                        <p class="card-text">Disponible</p>
+                    {% else %}
+                        <p class="card-text">Réserver</p>
+                    {% endif %}
+                    
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <h2 class="mt-2">Dvd</h2>
+    <div class="d-flex gap-2 ">
+        {% for dvd in dvds %}
+            <div class="card" style="width: 20rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{dvd.title}}</h5>
+                    <h5 class="card-title">{{dvd.author}}</h5>
+                    {% if dvd.available %}
+                        <p class="card-text">Disponible</p>
+                    {% else %}
+                        <p class="card-text">Réserver</p>
+                    {% endif %}
+                    
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+  {% endblock %}
+
