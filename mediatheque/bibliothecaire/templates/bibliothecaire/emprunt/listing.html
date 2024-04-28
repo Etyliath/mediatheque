@@ -1,0 +1,117 @@
+{% extends 'bibliothecaire/base.html' %}
+
+{% block content %}
+    <div class="my-3">
+    <h2>Livre</h2>
+    <table class="table" >
+        <thead>
+            <tr>
+                <th class="fs-4" >Date pris </th>
+                <th class="fs-4" >Date retour</th>
+                <th class="fs-4" >Etat</th>
+                <th class="fs-4" >Bloqué</th>
+                <th class="fs-4" >Membre</th>
+                <th class="fs-4" >Livre</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for empruntbook in empruntbooks %}
+                <tr>
+                    <td> {{empruntbook.date_emprunt}} </td>
+                    <td> {{empruntbook.date_restitution}} </td>
+                    <td> {{empruntbook.state}} </td>
+                    <td> {{empruntbook.lock}} </td>
+                    <td> {{empruntbook.member}} </td>
+                    <td> {{empruntbook.book}} </td>
+                </tr>
+            {% endfor %}
+        
+        </tbody>
+    </table>
+</div>
+<div class="my-3">
+    <h2>DVD</h2>
+    <table class="table" >
+        <thead>
+            <tr>
+                <th class="fs-4" >Date pris </th>
+                <th class="fs-4" >Date retour</th>
+                <th class="fs-4" >Etat</th>
+                <th class="fs-4" >Bloqué</th>
+                <th class="fs-4" >Membre</th>
+                <th class="fs-4" >DVD</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for empruntdvd in empruntdvds %}
+                <tr>
+                    <td> {{empruntdvd.date_emprunt}} </td>
+                    <td> {{empruntdvd.date_restitution}} </td>
+                    <td> {{empruntdvd.state}} </td>
+                    <td> {{empruntdvd.lock}} </td>
+                    <td> {{empruntdvd.member}} </td>
+                    <td> {{empruntdvd.dvd}} </td>
+                </tr>
+            {% endfor %}
+        
+        </tbody>
+    </table>
+</div>
+<div class="my-3">
+    <h2>CD</h2>
+    <table class="table" >
+        <thead>
+            <tr>
+                <th class="fs-4" >Date pris </th>
+                <th class="fs-4" >Date retour</th>
+                <th class="fs-4" >Etat</th>
+                <th class="fs-4" >Bloqué</th>
+                <th class="fs-4" >Membre</th>
+                <th class="fs-4" >CD</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for empruntcd in empruntcds %}
+                <tr>
+                    <td> {{empruntcd.date_emprunt}} </td>
+                    <td> {{empruntcd.date_restitution}} </td>
+                    <td> {{empruntcd.state}} </td>
+                    <td> {{empruntcd.lock}} </td>
+                    <td> {{empruntcd.member}} </td>
+                    <td> {{empruntcd.cd}} </td>
+                </tr>
+            {% endfor %}
+        
+        </tbody>
+    </table>
+</div>
+<div class="my-3">
+    <h2>Jeu de plateau</h2>
+    <table class="table" >
+        <thead>
+            <tr>
+                <th class="fs-4" >Date pris </th>
+                <th class="fs-4" >Date retour</th>
+                <th class="fs-4" >Etat</th>
+                <th class="fs-4" >Bloqué</th>
+                <th class="fs-4" >Membre</th>
+                <th class="fs-4" >Jeu de plateau</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for empruntboardgame in empruntboardgames %}
+                <tr>
+                    <td> {{empruntboardgame.date_emprunt}} </td>
+                    <td> {{empruntboardgame.date_restitution}} </td>
+                    <td> {{empruntboardgame.state}} </td>
+                    <td> {{empruntboardgame.lock}} </td>
+                    <td> {{empruntboardgame.member}} </td>
+                    <td> {{empruntboardgame.boardGame}} </td>
+                </tr>
+            {% endfor %}
+        
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

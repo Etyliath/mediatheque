@@ -94,7 +94,7 @@ class EmpruntCd(Emprunt):
 class EmpruntBoardGame(Emprunt):
     boardGame = models.OneToOneField(BoardGame, on_delete=models.CASCADE)
     def __str__(self):
-        return self.boardGame.title
+        return self.boardGame.name
 
     class Meta:
         verbose_name = "Emprunt Jeu Plateau"

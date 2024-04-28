@@ -1,0 +1,12 @@
+{% extends "bibliothecaire/base.html" %}
+
+{% block content %}
+    <h2 class="mt-3"> Emprunter un jeu de plateau</h2>
+    <div class="mt-3">
+    <form class="form-control  " action="" method="post" novalidate >
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-primary " type="submit" value="envoyer">
+    </form>
+    </div>
+{% endblock  %}
