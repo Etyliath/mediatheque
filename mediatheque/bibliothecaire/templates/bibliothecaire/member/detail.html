@@ -1,8 +1,8 @@
 {% extends "bibliothecaire/base.html" %}
 
 {% block content %}
-<a class="btn btn-primary my-2" href=" {% url 'listing' %} " >Retour</a>
-<h2 class="mt-3"> Mise à d'un livre</h2>
+<a class="btn btn-primary my-2" href=" {% url 'member-listing' %} " >Retour</a>
+<h2 class="mt-3"> Mise à d'un Membre</h2>
 <div class="mt-3">
 <form class="form-control  " action="" method="post" novalidate >
     {% csrf_token %}

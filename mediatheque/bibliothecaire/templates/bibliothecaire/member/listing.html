@@ -8,6 +8,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{member.name}}</h5>
                     <h5 class="card-title">{{member.email}}</h5>
+                    <a class="btn btn-secondary btn-sm my-2" href=" {% url 'detail-member' member_id=member.id %} " >editer</a>
                 </div>
                 {% comment %} <a class="btn btn-danger my-2" href=" {% url 'member-delete' member_id=member.id %} " >supprimer</a> {% endcomment %}
             </div>

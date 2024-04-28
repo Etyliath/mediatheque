@@ -21,6 +21,7 @@
     </div>
     <h2 class="mt-2">Dvd</h2>
     <a class="btn btn-primary my-2" href=" {% url 'dvd-create' %} " >ajouter</a>
+    <a class="btn btn-secondary my-2" href=" {% url 'emprunt-dvd-create' %} " >Emprunter</a>
     <div class="d-flex gap-2 ">
         {% for dvd in dvds %}
             <div class="card" style="width: 20rem;">
@@ -32,13 +33,14 @@
                     {% else %}
                         <p class="card-text">Réserver</p>
                     {% endif %}
-                    
+                    <a class="btn btn-secondary btn-sm my-2" href=" {% url 'detail-dvd' dvd_id=dvd.id %} " >editer</a>
                 </div>
             </div>
         {% endfor %}
     </div>
     <h2 class="mt-2">CD</h2>
     <a class="btn btn-primary my-2" href=" {% url 'cd-create' %} " >ajouter</a>
+    <a class="btn btn-secondary my-2" href=" {% url 'emprunt-cd-create' %} " >Emprunter</a>
     <div class="d-flex gap-2 ">
         {% for cd in cds %}
             <div class="card" style="width: 20rem;">
@@ -50,13 +52,14 @@
                     {% else %}
                         <p class="card-text">Réserver</p>
                     {% endif %}
-                    
+                    <a class="btn btn-secondary btn-sm my-2" href=" {% url 'detail-cd' cd_id=cd.id %} " >editer</a>
                 </div>
             </div>
         {% endfor %}
     </div>
     <h2 class="mt-2">Jeu de plateau</h2>
     <a class="btn btn-primary my-2" href=" {% url 'boardgame-create' %} " >ajouter</a>
+    <a class="btn btn-secondary my-2" href=" {% url 'emprunt-boardgame-create' %} " >Emprunter</a>
     <div class="d-flex gap-2 ">
         {% for boardgame in boardgames %}
             <div class="card" style="width: 20rem;">
@@ -68,7 +71,7 @@
                     {% else %}
                         <p class="card-text">Réserver</p>
                     {% endif %}
-                    
+                    <a class="btn btn-secondary btn-sm my-2" href=" {% url 'detail-boardgame' boardgame_id=boardgame.id %} " >editer</a>
                 </div>
             </div>
         {% endfor %}

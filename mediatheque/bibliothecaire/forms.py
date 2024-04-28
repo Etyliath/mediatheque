@@ -1,6 +1,6 @@
 from django import forms
 
-from bibliothecaire.models import Book, Dvd, Cd, BoardGame, Member, EmpruntBook
+from bibliothecaire.models import Book, Dvd, Cd, BoardGame, Member, EmpruntBook, EmpruntDvd, EmpruntCd, EmpruntBoardGame
 
 class MemberForm(forms.ModelForm):
     
@@ -43,4 +43,25 @@ class EmpruntBookForm(forms.ModelForm):
     
     class Meta:
         model = EmpruntBook
+        fields = '__all__'
+        
+
+class EmpruntDvdForm(forms.ModelForm):
+    
+    class Meta:
+        model = EmpruntDvd
+        fields = '__all__'
+
+
+class EmpruntCdForm(forms.ModelForm):
+    
+    class Meta:
+        model = EmpruntCd
+        fields = '__all__'
+
+
+class EmpruntBoardGameForm(forms.ModelForm):
+    
+    class Meta:
+        model = EmpruntBoardGame
         fields = '__all__'
