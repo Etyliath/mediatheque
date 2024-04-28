@@ -1,3 +1,4 @@
 /env/
 /mediatheque/mediatheque/__pycache__/
-/mediatheque/bibliotheque/__pycache__/
+/mediatheque/bibliothecaire/__pycache__/
+/mediatheque/bibliothecaire/migrations/__pycache__/
