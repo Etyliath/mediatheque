@@ -1,15 +1,13 @@
 {% extends "bibliothecaire/base.html" %}
 
 {% block content %}
-<a class="btn btn-primary my-2" href=" {% url 'member-listing' %} " >Retour</a>
-<h2 class="mt-3"> Mise à d'un Membre</h2>
-<div class="mt-3">
-<form class="form-control  " action="" method="post" novalidate >
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input class="btn btn-primary " type="submit" value="envoyer">
-</form>
-</div>
-
-
+    <a class="btn btn-secondary btn-sm my-1" href=" {% url 'member-listing' %} " >Retour</a>
+    <h2 class="mt-2"> Mise à jour d'un Membre</h2>
+    <div class="mt-2">
+        <form class="form-control  " action="" method="post" novalidate >
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="btn btn-primary btn-sm" type="submit" value="envoyer">
+        </form>
+    </div>
 {% endblock  %}
