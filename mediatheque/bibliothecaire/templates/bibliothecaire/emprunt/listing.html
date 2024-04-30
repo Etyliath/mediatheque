@@ -2,16 +2,17 @@
 
 {% block content %}
     <div class="my-3">
-    <h2>Livre</h2>
+    <h3>Livre</h3>
     <table class="table" >
         <thead>
             <tr>
-                <th class="fs-4" >Date pris </th>
-                <th class="fs-4" >Date retour</th>
-                <th class="fs-4" >Etat</th>
-                <th class="fs-4" >Bloqué</th>
-                <th class="fs-4" >Membre</th>
-                <th class="fs-4" >Livre</th>
+                <th class="fs-5" >Date pris </th>
+                <th class="fs-5" >Date retour</th>
+                <th class="fs-5" >Etat</th>
+                <th class="fs-5" >Bloqué</th>
+                <th class="fs-5" >Membre</th>
+                <th class="fs-5" >Livre</th>
+                <th colspan="2" >Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +24,11 @@
                     <td> {{empruntbook.lock}} </td>
                     <td> {{empruntbook.member}} </td>
                     <td> {{empruntbook.book}} </td>
+                    <td>
+                        <a class="btn btn-secondary btn-sm my-1" href=" {% url 'detail-emprunt-book' empruntbook_id=empruntbook.id %} " >Editer</a>
+                        <a class="btn btn-danger btn-sm my-1" href=" {% url 'delete-emprunt-book' empruntbook_id=empruntbook.id %} " >Supprimer</a>
+                    </td>
+
                 </tr>
             {% endfor %}
         
@@ -30,16 +36,17 @@
     </table>
 </div>
 <div class="my-3">
-    <h2>DVD</h2>
+    <h3>DVD</h3>
     <table class="table" >
         <thead>
             <tr>
-                <th class="fs-4" >Date pris </th>
-                <th class="fs-4" >Date retour</th>
-                <th class="fs-4" >Etat</th>
-                <th class="fs-4" >Bloqué</th>
-                <th class="fs-4" >Membre</th>
-                <th class="fs-4" >DVD</th>
+                <th class="fs-5" >Date pris </th>
+                <th class="fs-5" >Date retour</th>
+                <th class="fs-5" >Etat</th>
+                <th class="fs-5" >Bloqué</th>
+                <th class="fs-5" >Membre</th>
+                <th class="fs-5" >DVD</th>
+                <th colspan="2" >Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -51,6 +58,11 @@
                     <td> {{empruntdvd.lock}} </td>
                     <td> {{empruntdvd.member}} </td>
                     <td> {{empruntdvd.dvd}} </td>
+                    <td>
+                        <a class="btn btn-secondary btn-sm my-1" href=" {% url 'detail-emprunt-dvd' empruntdvd_id=empruntdvd.id %} " >Editer</a>
+                        <a class="btn btn-danger btn-sm my-1" href=" {% url 'delete-emprunt-dvd' empruntdvd_id=empruntdvd.id %} " >Supprimer</a>
+                    </td>
+
                 </tr>
             {% endfor %}
         
@@ -58,16 +70,17 @@
     </table>
 </div>
 <div class="my-3">
-    <h2>CD</h2>
+    <h3>CD</h3>
     <table class="table" >
         <thead>
             <tr>
-                <th class="fs-4" >Date pris </th>
-                <th class="fs-4" >Date retour</th>
-                <th class="fs-4" >Etat</th>
-                <th class="fs-4" >Bloqué</th>
-                <th class="fs-4" >Membre</th>
-                <th class="fs-4" >CD</th>
+                <th class="fs-5" >Date pris </th>
+                <th class="fs-5" >Date retour</th>
+                <th class="fs-5" >Etat</th>
+                <th class="fs-5" >Bloqué</th>
+                <th class="fs-5" >Membre</th>
+                <th class="fs-5" >CD</th>
+                <th colspan="2" >Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -79,6 +92,11 @@
                     <td> {{empruntcd.lock}} </td>
                     <td> {{empruntcd.member}} </td>
                     <td> {{empruntcd.cd}} </td>
+                    <td>
+                        <a class="btn btn-secondary btn-sm my-1" href=" {% url 'detail-emprunt-cd' empruntcd_id=empruntcd.id %} " >Editer</a>
+                        <a class="btn btn-danger btn-sm my-1" href=" {% url 'delete-emprunt-cd' empruntcd_id=empruntcd.id %} " >Supprimer</a>
+                    </td>
+
                 </tr>
             {% endfor %}
         
@@ -86,16 +104,17 @@
     </table>
 </div>
 <div class="my-3">
-    <h2>Jeu de plateau</h2>
+    <h3>Jeu de plateau</h3>
     <table class="table" >
         <thead>
             <tr>
-                <th class="fs-4" >Date pris </th>
-                <th class="fs-4" >Date retour</th>
-                <th class="fs-4" >Etat</th>
-                <th class="fs-4" >Bloqué</th>
-                <th class="fs-4" >Membre</th>
-                <th class="fs-4" >Jeu de plateau</th>
+                <th class="fs-5" >Date pris </th>
+                <th class="fs-5" >Date retour</th>
+                <th class="fs-5" >Etat</th>
+                <th class="fs-5" >Bloqué</th>
+                <th class="fs-5" >Membre</th>
+                <th class="fs-5" >Jeu de plateau</th>
+                <th colspan="2" >Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -107,6 +126,11 @@
                     <td> {{empruntboardgame.lock}} </td>
                     <td> {{empruntboardgame.member}} </td>
                     <td> {{empruntboardgame.boardGame}} </td>
+                    <td>
+                        <a class="btn btn-secondary btn-sm my-1" href=" {% url 'detail-emprunt-boardgame' empruntboardgame_id=empruntboardgame.id %} " >Editer</a>
+                        <a class="btn btn-danger btn-sm my-1" href=" {% url 'delete-emprunt-boardgame' empruntboardgame_id=empruntboardgame.id %} " >Supprimer</a>
+                    </td>
+
                 </tr>
             {% endfor %}
         

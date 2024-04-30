@@ -1,17 +1,26 @@
 {% extends 'bibliothecaire/base.html' %}
 {% block content %}
-    <h2 class="mt-2">Les Memebres</h2>
-    <a class="btn btn-primary my-2" href=" {% url 'member-create' %} " >ajouter</a>
-    <div class="d-flex gap-2">
-        {% for member in members %}
-            <div class="card" style="width: 20rem;">
-                <div class="card-body">
-                    <h5 class="card-title">{{member.name}}</h5>
-                    <h5 class="card-title">{{member.email}}</h5>
-                    <a class="btn btn-secondary btn-sm my-2" href=" {% url 'detail-member' member_id=member.id %} " >editer</a>
-                </div>
-                {% comment %} <a class="btn btn-danger my-2" href=" {% url 'member-delete' member_id=member.id %} " >supprimer</a> {% endcomment %}
-            </div>
-        {% endfor %}
-    </div>
+    <h4 class="mt-1">Les Membres</h4>
+    <a class="btn btn-primary btn-sm my-1" href=" {% url 'member-create' %} " >ajouter</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="fs-5">Nom</th>
+                <th class="fs-5">Mail</th>
+                <th class="fs-5" >Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in members %}
+                <tr>
+                    <td>{{member.name}}</td>
+                    <td>{{member.email}}</td>
+                    <td>
+                        <a class="btn btn-secondary btn-sm my-1" href=" {% url 'detail-member' member_id=member.id %} " >Editer</a>
+                        <a class="btn btn-danger btn-sm  my-1" href=" {% url 'delete-member' member_id=member.id %} " >Supprimer</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
