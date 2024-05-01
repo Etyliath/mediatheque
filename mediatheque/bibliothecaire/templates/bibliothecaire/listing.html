@@ -1,0 +1,180 @@
+{% extends 'bibliothecaire/base.html' %}
+{% block content %}
+    <h4 class="mt-2">Les livres</h4>
+    <a class="btn btn-primary btn-sm my-2" href=" {% url 'create-book' %} "
+    >ajouter un livre</a
+    >
+    <a
+    class="btn btn-secondary btn-sm my-2"
+    href=" {% url 'create-emprunt-book' %} "
+    >Créer un Emprunter</a
+    >
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="fs-5">Titre</th>
+                <th class="fs-5">Auteur retour</th>
+                <th class="fs-5">Etat</th>
+                <th class="fs-5" colspan="2">Actions</th>
+                </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{book.title}}</td>
+                <td>{{book.author}}</td>
+                <td>
+                    {% if book.available %}
+                    <p class="card-text">Disponible</p>
+                    {% else %}
+                    <p class="card-text">Réserver</p>
+                    {% endif %}
+                </td>
+                <td>
+                    <a
+                    class="btn btn-secondary btn-sm"
+                    href=" {% url 'detail-book' book_id=book.id %} "
+                    >editer</a
+                    >
+                    <a
+                    class="btn btn-danger btn-sm"
+                    href=" {% url 'delete-book' book_id=book.id %} "
+                    >Supprimer</a
+                    >
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h4 class="mt-2">Dvd</h4>
+    <a class="btn btn-primary btn-sm my-2" href=" {% url 'dvd-create' %} "
+    >ajouter un DVD</a
+    >
+    <a class="btn btn-secondary btn-sm my-2" href=" {% url 'emprunt-dvd-create' %} "
+    >Créer un Emprunter</a
+    >
+    <table class="table">
+    <thead>
+        <tr>
+            <th class="fs-5">Titre</th>
+            <th class="fs-5">Réalisateur</th>
+            <th class="fs-5">Etat</th>
+            <th class="fs-5" >Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for dvd in dvds %}
+        <tr>
+        <td>{{dvd.title}}</td>
+        <td>{{dvd.realizator}}</td>
+        <td>
+            {% if dvd.available %}
+            <p class="card-text">Disponible</p>
+            {% else %}
+            <p class="card-text">Réserver</p>
+            {% endif %}
+        </td>
+        <td>
+            <a
+            class="btn btn-secondary btn-sm my-2"
+            href=" {% url 'detail-dvd' dvd_id=dvd.id %} "
+            >editer</a
+            >
+            <a
+            class="btn btn-danger btn-sm"
+            href=" {% url 'delete-dvd' dvd_id=dvd.id %} "
+            >Supprimer</a
+            >
+        </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+    <h4 class="mt-2">CD</h4>
+    <a class="btn btn-primary btn-sm my-2" href=" {% url 'cd-create' %} ">ajouter un CD</a>
+    <a class="btn btn-secondary btn-sm my-2" href=" {% url 'emprunt-cd-create' %} "
+    >Créer un Emprunter</a
+    >
+    <table class="table">
+    <thead>
+        <tr>
+            <th class="fs-5">Titre</th>
+            <th class="fs-5">Artiste</th>
+            <th class="fs-5">Etat</th>
+            <th class="fs-5" colspan="2">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cd in cds %}
+        <tr>
+        <td>{{cd.title}}</td>
+        <td>{{cd.artist}}</td>
+        <td>
+            {% if cd.available %}
+            <p class="card-text">Disponible</p>
+            {% else %}
+            <p class="card-text">Réserver</p>
+            {% endif %}
+        </td>
+        <td>
+            <a
+            class="btn btn-secondary btn-sm my-2"
+            href=" {% url 'detail-cd' cd_id=cd.id %} "
+            >editer</a
+            >
+            <a
+            class="btn btn-danger btn-sm"
+            href=" {% url 'delete-cd' cd_id=cd.id %} "
+            >Supprimer</a
+            >
+        </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+
+    <h4 class="mt-2">Jeu de plateau</h4>
+    <a class="btn btn-primary btn-sm my-2" href=" {% url 'boardgame-create' %} "
+    >ajouter un Jeu</a
+    >
+    <a class="btn btn-secondary btn-sm my-2" href=" {% url 'emprunt-boardgame-create' %} "
+    >Créer un Emprunter</a
+    >
+    <table class="table">
+    <thead>
+        <tr>
+            <th class="fs-5">Nom</th>
+            <th class="fs-5">Créateur</th>
+            <th class="fs-5">Etat</th>
+            <th class="fs-5" colspan="2">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for boardgame in boardgames %}
+        <tr>
+        <td>{{boardgame.name}}</td>
+        <td>{{boardgame.creator}}</td>
+        <td>
+            {% if boardgame.available %}
+            <p class="card-text">Disponible</p>
+            {% else %}
+            <p class="card-text">Réserver</p>
+            {% endif %}
+        </td>
+        <td>
+            <a
+            class="btn btn-secondary btn-sm my-2"
+            href=" {% url 'detail-boardgame' boardgame_id=boardgame.id %} "
+            >editer</a
+            >
+            <a
+            class="btn btn-danger btn-sm"
+            href=" {% url 'delete-boardgame' boardgame_id=boardgame.id %} "
+            >Supprimer</a
+            >
+        </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}

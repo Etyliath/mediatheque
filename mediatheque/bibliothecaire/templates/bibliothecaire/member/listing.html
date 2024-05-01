@@ -1,0 +1,26 @@
+{% extends 'bibliothecaire/base.html' %}
+{% block content %}
+    <h4 class="mt-1">Les Membres</h4>
+    <a class="btn btn-primary btn-sm my-1" href=" {% url 'member-create' %} " >ajouter</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="fs-5">Nom</th>
+                <th class="fs-5">Mail</th>
+                <th class="fs-5" >Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in members %}
+                <tr>
+                    <td>{{member.name}}</td>
+                    <td>{{member.email}}</td>
+                    <td>
+                        <a class="btn btn-secondary btn-sm my-1" href=" {% url 'detail-member' member_id=member.id %} " >Editer</a>
+                        <a class="btn btn-danger btn-sm  my-1" href=" {% url 'delete-member' member_id=member.id %} " >Supprimer</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
